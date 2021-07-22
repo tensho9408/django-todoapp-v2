@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+<!-- 見出し -->
+{% block header %}
+    <div class="jumbotron jumbotron-fluid" style="background-color:#9ba6a6;">
+        <div class="container">
+          <h1 class="display-4">TodoList</h1>
+          <p class="lead">This is a List unit, Let's improve work efficiency</p>
+        </div>
+    </div>
+{% endblock header %}
+
+<!-- 本文 -->
+{% block content %}
+    <div class="container">
+        <a href="{% url 'create' %}" class="btn btn-secondary " style="margin-bottom:-15px;" tabindex="-1" role="button" aria-disabled="true">To Create</a>
+
+        <!-- 内容 -->
+        {% for item in object_list %}
+            <div class="alert alert-{{ item.priority }}" role="alert", style="margin-top:25px;">
+                <p>{{ item.title }}</p>
+                <p style="margin-top: -15px; font-size: 15px;">{{ item.duedate | date:"o/n/j" }}</p>
+                <a href="{% url 'update' item.pk %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">To Edit Screen</a>
+                <a href="{% url 'delete' item.pk %}" class="btn btn-danger " tabindex="-1" role="button" aria-disabled="true">To Delete Screen</a>
+                <a href="{% url 'detail' item.pk %}" class="btn btn-success " tabindex="-1" role="button" aria-disabled="true">To Detail Screen</a>
+
+            </div>
+        {% endfor %}<!-- 繰り返し処理終了 -->
+    </div>
+{% endblock content %}<!--  内容終了　-->
+

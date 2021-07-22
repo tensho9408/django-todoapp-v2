@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <div class="jumbotron jumbotron-fluid" style="background-color: lightcoral;margin-bottom: 30px;" >
+            <div class="container">
+              <h1 class="display-4">Delete</h1>
+              <p class="lead">This is a delete unit, Let's improve work efficiency</p>
+            </div>
+      </div>
+
+{% endblock header%}
+
+
+{% block content %}
+   <form action="" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <h2><p><span style="background-color: lightyellow;">Are you sure you want to delete?</span></p></h2>
+            <p>{{ object.title }}: {{ object.memo }}</p>
+            <input type="submit" value="delete">
+        </div>
+    </form>
+{% endblock content %}

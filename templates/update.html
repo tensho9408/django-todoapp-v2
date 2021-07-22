@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <div class="jumbotron jumbotron-fluid" style="background-color: lightgreen;" >
+            <div class="container">
+              <h1 class="display-4">Update</h1>
+              <p class="lead">This is a update unit, Let's improve work efficiency</p>
+            </div>
+      </div>
+{% endblock header%}
+
+
+{% block content %}
+    <form action="" method="POST">{% csrf_token %}
+        <div class="container">
+            {{ form.as_p }}
+
+            <input type="submit" value="update">
+        </div>
+    </form>
+
+{% endblock content %}

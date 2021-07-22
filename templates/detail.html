@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <div class="jumbotron jumbotron-fluid" style="background-color: thistle;" >
+            <div class="container">
+              <h1 class="display-4">Details</h1>
+              <p class="lead">This is a detail unit, Let's improve work efficiency</p>
+            </div>
+      </div>
+{% endblock header%}
+
+
+{% block content %}
+    <div class="container">
+        <h2>title</h2>
+        {{ object.title }}
+        <h2>memo</h2>
+        {{ object.memo }}
+    </div>
+{% endblock content %}
