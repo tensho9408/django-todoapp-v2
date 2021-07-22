@@ -17,12 +17,12 @@
 
         <!-- 内容 -->
         {% for item in object_list %}
-            <div class="alert alert-{{ item.priority }}" role="alert", style="margin-top:25px;">
+            <div class="alert alert-{{ item.priority }} " role="alert", style="margin-top:25px;">
                 <p>{{ item.title }}</p>
                 <p style="margin-top: -15px; font-size: 15px;">{{ item.duedate | date:"o/n/j" }}</p>
-                <a href="{% url 'update' item.pk %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">To Edit Screen</a>
-                <a href="{% url 'delete' item.pk %}" class="btn btn-danger " tabindex="-1" role="button" aria-disabled="true">To Delete Screen</a>
-                <a href="{% url 'detail' item.pk %}" class="btn btn-success " tabindex="-1" role="button" aria-disabled="true">To Detail Screen</a>
+                <a href="{% url 'update' item.pk %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">Edit</a>
+                <a href="{% url 'delete' item.pk %}" class="btn btn-danger " tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                <a href="{% url 'detail' item.pk %}" class="btn btn-success " tabindex="-1" role="button" aria-disabled="true">Detail</a>
 
             </div>
         {% endfor %}<!-- 繰り返し処理終了 -->
